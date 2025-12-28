@@ -1,55 +1,80 @@
 # College Result Notifier
 
-Python utility that logs into the college e-campus portal, captures attendance and result data, watches for updates, and emails notifications.
+A minimal Python service that logs into the PSG Tech eCampus portal, monitors both results and attendance, and emails you only when something new appears or existing data changes.
 
 ## Features
-- Authenticates against the ASP.NET WebForms campus portal
-- Parses attendance and result pages to build structured snapshots
-- Stores previous state locally to detect changes between runs
-- Emails either ad-hoc snapshots or change alerts via SMTP
-- Supports scheduled checks using APScheduler
+- ASP.NET WebForms login handled with hidden field extraction
+- Immediate email confirmation after each successful login
+- BeautifulSoup parsing of the `DgResult` table and configurable attendance table
+- Local state snapshots stored in `state.json` and `attendance_state.json`
+- Gmail SMTP email notifications with detailed diffs
+- APScheduler background job every 15 minutes
 
 ## Prerequisites
-- Python 3.11+
-- Gmail account with an app password (or any SMTP provider credentials)
+- Python 3.11 or newer
+- Gmail account with an app password (two-factor authentication recommended)
+- Stable network connectivity to the PSG Tech portal
 
 ## Installation
-```bash
-python -m venv .venv
-.\.venv\Scripts\activate
-pip install -r college_result_notifier/requirements.txt
-```
+1. Clone or copy the project to your machine.
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   .venv\Scripts\activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Configuration
-Create a `.env` file with the credentials and email settings:
-```dotenv
-PORTAL_USERNAME=your-student-id
-PORTAL_PASSWORD=your-password
-SMTP_USERNAME=your-smtp-user
-SMTP_PASSWORD=your-app-password
-SMTP_SERVER=smtp.gmail.com
-SMTP_PORT=587
-TO_EMAIL=recipient@example.com
-FROM_EMAIL=sender@example.com
-```
+1. Duplicate the sample below into a new `.env` file placed in the project root:
+   ```ini
+   PORTAL_ROLL_NUMBER=YOUR_ROLL_NUMBER
+   PORTAL_PASSWORD=YOUR_PORTAL_PASSWORD
+
+   EMAIL_SENDER=notify@example.com
+   EMAIL_RECIPIENT=youraddress@example.com
+   EMAIL_SMTP_USER=yourgmail@gmail.com
+   EMAIL_SMTP_PASSWORD=YOUR_GMAIL_APP_PASSWORD
+   ```
+2. Optional overrides:
+   ```ini
+   PORTAL_BASE_URL=https://ecampus.psgtech.ac.in/studzone2
+   PORTAL_LOGIN_PATH=Default.aspx
+   PORTAL_RESULT_PATH=FrmEpsStudResult.aspx
+      PORTAL_ATTENDANCE_PATH=FrmAttendanceView.aspx
+      ATTENDANCE_TABLE_ID=DgAttendance
+   REQUEST_TIMEOUT_CONNECT=5
+   REQUEST_TIMEOUT_READ=20
+   ```
+3. Keep `.env` out of version control.
 
 ## Usage
-Run an immediate snapshot email:
-```bash
-python -m college_result_notifier.main --send-snapshot
-```
+- First run seeds the baseline without sending an email:
+  ```bash
+  python main.py
+  ```
+- Send a one-off email containing the current results and attendance data:
+   ```bash
+   python main.py --send-snapshot
+   ```
+- Leave the script running; the scheduler executes every 15 minutes.
+- Stop the service with `Ctrl+C`.
 
-Run the standard change-detection loop (sends combined "Attendance/results updated" emails when changes are detected):
-```bash
-python -m college_result_notifier.main
-```
-
-Launch the scheduler to poll periodically (default interval defined in `scheduler.py`):
-```bash
-python -m college_result_notifier.scheduler
-```
+## Testing Checklist
+1. **Login**
+   - Run `python main.py` and confirm `Authentication succeeded` in the console.
+   - Check your inbox for a "PSG Tech Portal Login Successful" confirmation.
+   2. **Result Detection**
+   - Temporarily edit `state.json` to simulate an older grade and rerun; watch for a detected change and an email.
+   3. **Attendance Detection**
+      - Adjust `attendance_state.json` (e.g., change a percentage) and rerun; expect an "Attendance Update" email.
+   4. **Email Notification**
+   - Confirm the Gmail SMTP app password is valid by forcing a change (as above) and checking your inbox.
 
 ## Troubleshooting
-- Ensure the `.env` file is filled with valid portal and SMTP credentials
-- Delete `college_result_notifier/state.json` and `college_result_notifier/attendance_state.json` if you need to reset stored baselines
-- Run with `--send-snapshot` to validate connectivity and email delivery before enabling scheduled checks
+- `Portal rejected the provided credentials.` → Recheck roll number/password and make sure there is no CAPTCHA.
+- `Result table DgResult not found.` → Portal layout may have changed; capture the HTML and inspect manually.
+- `Email notification failed` → Verify SMTP credentials, app password, and that less secure app access is not blocking the login.
+- Reset the baseline by deleting `state.json` if you want to reinitialize without historical data.
