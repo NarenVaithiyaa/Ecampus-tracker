@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variable files
+.env
+.env.*
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Installer logs
+pip-log.txt
+
+# Testing and coverage artifacts
+.coverage
+.coverage.*
+.pytest_cache/
+.nox/
+.cache/
+
+# Type checker caches
+.mypy_cache/
+.pyright/
+
+# Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs and OS cruft
+*.log
+.DS_Store
+Thumbs.db
+
+# Project state files
+college_result_notifier/state.json
+college_result_notifier/attendance_state.json

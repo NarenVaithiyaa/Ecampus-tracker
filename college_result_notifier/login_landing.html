@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head id="Head1"><title>
+	Student Zone-Login
+</title><link rel="icon" href="Images/psgtechlogo.jpg" type="image/ico" />
+
+       <script type="text/javascript" language="javascript">
+              </script>
+ 
+
+    <style type="text/css">
+        .maindiv {
+            background-color: #ebcdcd;
+            width: 900px;
+            height: 1200px;
+            border: solid blue;
+        }
+
+        body {
+            background-image: url(../Images/accounts.jpg);
+            background-size: cover;
+        }
+    
+        body {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        p {
+            padding: 10px;
+        }
+
+        #wrapper {
+            margin:0 auto;
+            width: 1100px;
+        }
+           #in_wrapper1 {
+            box-shadow: 12px 17px 13px #3B6AA0;
+        }
+
+        #headerleft {
+            float: left;
+            height: 100px;
+            width: 550px;
+            background: #0D4F8B;
+            color: white;
+            font-family: 'Times New Roman';
+            font-weight: bold;
+            font-size: 26px;
+            vertical-align: central;
+        }
+
+        #headerright {
+            float: left;
+            height: 100px;
+            width: 550px;
+            background: #0D4F8B;
+        }
+
+        #navigation {
+            float: left;
+            height: 40px;
+            width: 1080px;
+            background: #1874CD;
+            font-weight: bold;
+            font-size: 18px;
+            color: white;
+            border: solid #0D4F8B 10px;
+            border-bottom: solid #0D4F8B 10px;
+        }
+     
+
+        #content {
+            float: left;
+            background: #0D4F8B;
+            width: 850px;
+            height: 350px;
+        }
+
+        #footer {
+            height: 40px;
+            width: 1100px;
+            background: #0D4F8B;
+            clear: both;
+            color: white;
+        }
+
+        .footer {
+            height: 60px;
+            width: 1100px;
+            background: #0D4F8B;
+            clear: both;
+            color: white;
+            text-align: center;
+        }
+
+        .txtmar {
+            margin-top: 5px;
+            padding: 3px;
+            border-radius: 4px;
+           
+        }
+
+            .txtmar:hover {
+                box-shadow: 1px 1px 10px #0EBFE9;
+            }
+
+            .txtmar:focus {
+                box-shadow: 1px 1px 10px #FFCC11;
+            }
+
+        #psgtechlogo {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        #headd {
+            height: 100px;
+        }
+        /*#LnkButLogin {
+            border-radius: 5px;
+            margin-top: 5px;
+            text-decoration:none;
+            color:white;
+            font-weight: bold;
+  font-size: 16px;
+  padding: 5px;
+  background-color:#1874CD;
+        }*/
+        #btnLogin {
+            font-family: arial;
+            text-decoration: none;
+           
+            font-size: 12px;
+            font-weight: bold;
+            
+            /*text-shadow: 1px 1px 0px #7CACDE;*/
+            /*box-shadow: 2px 4px 2px #78B8F9;*/
+            padding: 5px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+            #btnLogin:hover {
+                color: #0D4F8B !important;
+                box-shadow: 1px 1px 6px #05EDFF;
+                background: linear-gradient(top, #FAFAFA, #F0F0F0);
+                background: -ms-linear-gradient(top, #FAFAFA, #F0F0F0);
+                background: -webkit-gradient(linear, left top, left bottom, from(#FAFAFA), to(#F0F0F0));
+                background: -moz-linear-gradient(top, #FAFAFA, #F0F0F0);
+            }
+
+        #marquee_head {
+            padding: 5px;
+            height: 40px;
+            vertical-align: middle;
+        }
+        /* menu */
+
+        #templatemo_menu_wrapper {
+            float: left;
+            width: 250px;
+            height: 350px;
+            background: #0D4F8B;
+            overflow: hidden;
+            display:block
+        }
+
+        #templatemo_menu {
+            padding: 14px 10px;
+            background: #003F87;
+            overflow: hidden;
+            display:block
+             }
+
+         #templatemo_menu1 {
+            padding: 14px 10px;
+            background:  #003F87;
+            overflow: hidden;
+            height:100px;
+             display:block;
+        }
+
+            #templatemo_menu ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            height: 129px;
+        }
+
+                #templatemo_menu ul li {
+                    width: 200px;
+                    height: 41px;
+                    padding: 0 0 0 20px;
+                    background: #003F87;
+                    margin-bottom: 4px;
+            margin-left: 0px;
+            margin-right: 0px;
+            margin-top: 0px;
+        }
+
+                    #templatemo_menu ul li:hover {
+                        background: rgba(255, 255, 255, 0.81);
+                    }
+
+                    #templatemo_menu ul li a {
+                        display: block;
+                        width: 170px;
+                        height: 33px;
+                        padding: 10px 0 0 30px;
+                        color: #9fa2a4;
+                        font-size: 16px;
+                        text-decoration: none;
+                        font-weight: normal;
+                        background: url(../images/templatemo_menu_list_icon.jpg) left center no-repeat;
+                        outline: none;
+                    }
+
+            #templatemo_menu li .current {
+                color: #ffffff;
+            }
+
+            #templatemo_menu li a:hover {
+                color: #0D4F8B;
+                font-weight: bold;
+            }
+
+            #templatemo_menu .last {
+                margin-bottom: 0px;
+            }
+
+        #VSLogin, #Lblerror {
+            padding: 5px 0px 0px 15px;
+        }
+        .margin {
+            margin-right:500%;
+        }
+        /* end of menu*/
+    </style>
+
+            <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+</head>
+
+<body oncontextmenu="return false;">
+    
+    
+    <form method="post" action="./" onsubmit="javascript:return WebForm_OnSubmit();" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="f2MIUBYCT0DtOjbsJcte1HbZkuCoyEVTIABPNFuflMzY/QIteQWZmkmQlXSsl35WYco9nz+oEcKhTBvOv6UbRWaxoNuZLJ5yT7+9jHkE/T8Av1zF9sjAwl6fApNM1DyCdVDT37dKl1aKyToQY3dPuGlybDLJBl6+FP8kxZSjbpJmQyuQQOh6bJLsT2ov87N/4OGtf5GFYCCA7lSK7EU/q9btO7cyrD1vTSSY47IF2IA=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/studzone2/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGNy9TNFhWGKJqZkrv3qdIqNlizrIchKtzdxZ2DsVI0VfjVOw2bzbH6DIqNyi8-0tg2&amp;t=637475441981919477" type="text/javascript"></script>
+
+
+<script src="/studzone2/ScriptResource.axd?d=nv7asgRUU0tRmHNR2D6t1OuDQzZxhV2NyRNlhj1Y2Zlvr1sgPIhKDJn0GeQvDBPPTRnkYKrmgBl3de8PurTg8sYt_bmFFO3MyaiTJkxswpMC9vhzuT-80mcjD2NmmHbtgGvRLvU3qOEVuDjW0V8lnA2&amp;t=3ee86f5f" type="text/javascript"></script>
+<script src="/studzone2/ScriptResource.axd?d=D9drwtSJ4hBA6O8UhT6CQnrJCSMP4u8_isYJX9MkxemJJ1iDWPWGBHtBCresKw1AIVB79g1D2PJL5au_md86qHMB7EDK2w2YYV6BCpzEq5-1VPq8kcIZxayBqYG1Bd0QujawLN4xXyP5dg0TjKPhRfIb4WIsIlNs0Dt9ADJgBYs1&amp;t=10c151ff" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/studzone2/ScriptResource.axd?d=JnUc-DEDOM5KzzVKtsL1td3_DJYXDVDNij9MS6t8GVsuZj2OqxtTrG1ilXoFhvm_8yswH1nSCQEGK_8zuwHzwDeH_altwpzeQgPQuzTPPZ-FvtJN9rAy2iEcqvJtthpM3tC3Hb2UPlLqRV-2XKPubXwIaYXm3JY3f6EgV52LvGeTQWmv67VovCuBPaFf7lY90&amp;t=10c151ff" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E64D2FFE" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="p92uHiypaqqj4skLRwADcZIgs0mTlvmlmVcTaUWcra+Cw4gDBTWDLPFuTAD0wVHWLBoW+tPN9gmBHwzjAe8JWjB/YbFse+HrJefwh3JKWwDyx/o5JbtB+LNiQro9Vl+E4ho98rbAb4I2KOHfcZ6tLo0/PAOphaQw/+VZUhE6LT75G/B7ZPUUeHIh2nugNlDB56mbBaDGkooEM3d3sJbV5ecCbnX3BXkK4LtM6e388390uyeXjlcCVSYaiKARPm8orU5rrNhU0IM/+ZTW1lEQuZjpYWzJDDaYExWDOOirofE=" />
+</div>
+        <div id="wrapper">
+            <div id="in_wrapper1">
+                <div id="headd">
+                    <div id="headerleft">
+                        &nbsp;<img id="psgtechlogo" src="Images/psgtechlogo.jpg" style="height: 68px; width: 79px" />
+                        PSG College of Technology
+                    </div>
+                    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('SCM1', 'form1', ['tUP1','UP1'], [], [], 90, '');
+//]]>
+</script>
+
+                    <div id="headerright">
+                        
+                    </div>
+
+                </div>
+                <div id="navigation">
+                    <marquee id="marquee_head" behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">Welcome to Students Zone!</marquee>
+                </div>
+                              
+          
+            <div id="templatemo_menu_wrapper">
+                 <div id="templatemo_menu1" style="text-align:center;color:#ffffff;font-weight:bold; height: 32px;"> 
+                     </div> 
+        	<div id="templatemo_menu">
+                <ul >
+                
+                     
+                    <table id="rdolst" style="color:White;font-size:14px;font-weight:bold;line-height:2.0em;">
+	<tr>
+		<td><input id="rdolst_0" type="radio" name="rdolst" value="S" checked="checked" /><label for="rdolst_0">Student</label></td>
+	</tr><tr>
+		<td><input id="rdolst_1" type="radio" name="rdolst" value="E" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;rdolst$1\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="rdolst_1">External Candidate</label></td>
+	</tr><tr>
+		<td><input id="rdolst_2" type="radio" name="rdolst" value="F" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;rdolst$2\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="rdolst_2">Staff</label></td>
+	</tr><tr>
+		<td><input id="rdolst_3" type="radio" name="rdolst" value="P" onclick="javascript:setTimeout(&#39;__doPostBack(\&#39;rdolst$3\&#39;,\&#39;\&#39;)&#39;, 0)" /><label for="rdolst_3">Parent</label></td>
+	</tr>
+</table>
+
+
+                </ul>    	
+            </div> <!-- end of menu -->        
+        </div>
+       
+        <div id="content">
+            	<div id="wowslider-container1" style="width: 653px; height:350px;float:left;">
+	<div >
+        <ul>
+           
+            
+            <center>   
+                
+            <br /><br /><br />
+                <span id="lblnamlog" style="color:Yellow;font-size:Medium;font-weight:bold;text-decoration:underline;">Student Login</span><br /><br /><br /><br /><br />
+                 &nbsp;&nbsp;&nbsp;
+                <table align="center" width="70%">
+                    <tr>
+                        <td><span id="Lblrol" class="aspNetDisabled" style="color:White;font-size:Medium;font-weight:bold;">Rollno</span></td>
+                        <td><input name="txtusercheck" type="text" id="txtusercheck" title="Enter Your Students.Psgtech  Password" class="txtmar" /></td>
+                        <td><span id="txtstud" style="color:White;visibility:hidden;">* Enter Login Id</span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="Lblpas" style="color:White;font-size:Medium;font-weight:bold;">Password</span></td>
+                        <td><input name="txtpwdcheck" type="password" id="txtpwdcheck" class="txtmar" /></td>
+                        <td><span id="txtpwd" style="color:White;visibility:hidden;">* Enter Password</span></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr> 
+                     
+                </table>
+                <br />
+                <td valign="middle">
+                    <div id="UP1">
+	
+                           <table style="visibility:hidden">
+                                <tr>
+                                    <td >
+                                        <img id="imgCaptcha" style="height:30px;width:200px;" />
+                                    </td>
+                                    <td valign="middle">
+                                        <input type="submit" name="btnRefresh" value="Refresh" id="btnRefresh" />
+                                    </td>
+                                </tr>
+                            </table>
+                        
+</div>
+                </td>
+              
+               
+
+            <input type="submit" name="abcd3" value="Login" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;abcd3&quot;, &quot;&quot;, true, &quot;a&quot;, &quot;&quot;, false, false))" id="abcd3" style="color:Black;font-size:Medium;font-weight:bold;width:100px;" />
+              &nbsp;&nbsp;&nbsp;
+                 
+                &nbsp <br /><br />
+            </bottom> 
+                 <a id="HyperLink1" href="AttWfForgotPass.aspx" style="color:Gold;font-size:Medium;font-weight:bold;text-decoration:underline;">Forgot Password?</a>
+
+                
+      </ul>
+</div>
+
+	
+	</div><script type="text/javascript" src="engine1/wowslider.js"></script><script type="text/javascript" src="engine1/wowslider.js"></script></div>
+           
+        <div id="footer">
+            <p>&nbsp;</p>
+        </div>
+            </div>
+            <br />
+            <div id="Div1" class="footer">
+                <p>Copyright © 2016 Powered by PSG Software Development Centre</p>
+            </div>
+        </div>
+
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("txtstud"), document.getElementById("txtpwd"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var txtstud = document.all ? document.all["txtstud"] : document.getElementById("txtstud");
+txtstud.controltovalidate = "txtusercheck";
+txtstud.errormessage = "* Enter Login Id";
+txtstud.validationGroup = "a";
+txtstud.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+txtstud.initialvalue = "";
+var txtpwd = document.all ? document.all["txtpwd"] : document.getElementById("txtpwd");
+txtpwd.controltovalidate = "txtpwdcheck";
+txtpwd.errormessage = "* Enter Password";
+txtpwd.validationGroup = "a";
+txtpwd.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+txtpwd.initialvalue = "";
+//]]>
+</script>
+
+<script language=JavaScript>document.getElementById('txtusercheck').focus()</script>
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        
+document.getElementById('txtstud').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('txtstud'));
+}
+
+document.getElementById('txtpwd').dispose = function() {
+    Array.remove(Page_Validators, document.getElementById('txtpwd'));
+}
+//]]>
+</script>
+</form>
+</body>   
+</html>
