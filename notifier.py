@@ -42,8 +42,7 @@ def _send_email(config: AppConfig, subject: str, body: str) -> None:
 
     logging.info("Sending email to %s with subject '%s'", config.email.recipient, subject)
     try:
-        with smtplib.SMTP(config.smtp_host, config.smtp_port, timeout=30) as smtp:
-            smtp.starttls()
+        with smtplib.SMTP_SSL(config.smtp_host, 465, timeout=30) as smtp:
             smtp.login(config.email.smtp_user, config.email.smtp_password)
             smtp.send_message(message)
     except (smtplib.SMTPException, OSError) as exc:
