@@ -43,8 +43,8 @@ A minimal Python service that logs into the PSG Tech eCampus portal, monitors bo
    PORTAL_BASE_URL=https://ecampus.psgtech.ac.in/studzone2
    PORTAL_LOGIN_PATH=Default.aspx
    PORTAL_RESULT_PATH=FrmEpsStudResult.aspx
-      PORTAL_ATTENDANCE_PATH=FrmAttendanceView.aspx
-      ATTENDANCE_TABLE_ID=DgAttendance
+   PORTAL_ATTENDANCE_PATH=FrmAttendanceView.aspx
+   ATTENDANCE_TABLE_ID=DgAttendance
    REQUEST_TIMEOUT_CONNECT=5
    REQUEST_TIMEOUT_READ=20
    ```
@@ -52,15 +52,18 @@ A minimal Python service that logs into the PSG Tech eCampus portal, monitors bo
 
 ## Usage
 - First run seeds the baseline without sending an email:
-  ```bash
-  python main.py
-  ```
+   ```bash
+   python main.py
+   ```
 - Send a one-off email containing the current results and attendance data:
    ```bash
    python main.py --send-snapshot
    ```
-- Leave the script running; the scheduler executes every 15 minutes.
-- Stop the service with `Ctrl+C`.
+- Run the scheduler loop (checks every 15 minutes by default):
+   ```bash
+   python scheduler.py
+   ```
+- Stop the service with Ctrl+C.
 
 ## Testing Checklist
 1. **Login**

@@ -45,5 +45,5 @@ pip-log.txt
 Thumbs.db
 
 # Project state files
-college_result_notifier/state.json
-college_result_notifier/attendance_state.json
+state.json
+attendance_state.json
